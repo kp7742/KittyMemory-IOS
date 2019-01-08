@@ -89,8 +89,9 @@ std::string MemKitty::read2HexStr(void *addr, size_t len) {
   char tmp[len];
   memset(tmp, 0, len);
 
-  char buffer[len*2];
-  memset(buffer, 0, len*2);
+  size_t bufferLen = len*2 + 1;
+  char buffer[bufferLen];
+  memset(buffer, 0, bufferLen);
 
   std::string ret  = "0x";
 
